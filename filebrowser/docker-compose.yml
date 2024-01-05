@@ -1,0 +1,14 @@
+version: 3.3
+services:
+    filebrowser:
+        volumes:
+            - /home/bailey/Server/Docker/filebrowser/srv:/srv
+            - /home/bailey/Server/Docker/filebrowser/filebrowser.db:/database/filebrowser.db
+            - /home/bailey/Server/Docker/filebrowser/settings.json:/config/settings.json
+        environment:
+            - PUID=1000
+            - PGID=1000
+        user: "true"
+        ports:
+            - 8585:8585
+        image: filebrowser/filebrowser:s6
