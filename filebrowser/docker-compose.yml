@@ -5,7 +5,7 @@ services:
     image: hurlenko/filebrowser
     user: "1000:1000"
     ports:
-      - 443:8585
+      - 8585:8080
     volumes:
       - /home/bailey/:/data
       - /home/bailey/Docker/filebrowser/config:/config
