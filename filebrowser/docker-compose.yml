@@ -7,7 +7,7 @@ services:
     ports:
       - 8585:8080
     volumes:
-      - /home/bailey/:/data
+      - /home/bailey:/data
       - /home/bailey/Docker/filebrowser/config:/config
     environment:
       - FB_BASEURL=/filebrowser
