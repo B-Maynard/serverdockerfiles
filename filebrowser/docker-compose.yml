@@ -9,6 +9,9 @@ services:
     volumes:
       - /home/bailey:/data
       - /home/bailey/Docker/filebrowser/config:/config
+      - /home/bailey/Docker/filebrowser/config/filebrowser.db:/filebrowser.db
+      - /home/bailey/Docker/filebrowser/config/database.db:/database.db
+      - /home/bailey/Docker/filebrowser/config/.filebrowser.json:/.filebrowser.json
     environment:
       - FB_BASEURL=/filebrowser
       - PUID=1000
