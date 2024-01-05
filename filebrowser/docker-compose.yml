@@ -6,9 +6,8 @@ services:
             - /home/bailey/Server/Docker/filebrowser/filebrowser.db:/database/filebrowser.db
             - /home/bailey/Server/Docker/filebrowser/settings.json:/config/settings.json
         environment:
-            - PUID=995
+            - PUID=1000
             - PGID=1000
-        user: "docker"
         ports:
             - 8585:8585
         image: filebrowser/filebrowser:s6
