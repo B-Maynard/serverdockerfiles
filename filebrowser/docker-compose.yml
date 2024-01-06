@@ -1,14 +1,14 @@
+version: "3.3"
+
 services:
   filebrowser:
-    image: filebrowser/filebrowser:latest
+    image: hurlenko/filebrowser
+    user: "${UID}:${GID}"
     ports:
       - 8585:8080
     volumes:
-      - /home/bailey:/srv
+      - /home/bailey:/data
       - /home/bailey/Docker/filebrowser/config:/config
-      - /home/bailey/Docker/filebrowser/filebrowser.db:/database/filebrowser.db
-      - /home/bailey/Docker/filebrowser/config/settings.json:/config/settings.json
     environment:
-      - PUID=1000
-      - PGID=1000
-    restart: unless-stopped
+      - FB_BASEURL=/filebrowser
+    restart: always
