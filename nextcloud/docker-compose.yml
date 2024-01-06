@@ -20,12 +20,6 @@ services:
     volumes:
       - /home/bailey/Docker/NextCloud/nextcloud/:/nextcloud
       - /home/bailey/Docker/NextCloud/data/:/var/www/html
-    environment:
-      - VIRTUAL_HOST=cloud.baileymaynard.com
-      - LETSENCRYPT_HOST=cloud.baileymaynard.com
-      - LETSENCRYPT_EMAIL=baileymaynard418@gmail.com
-      - MYSQL_HOST=db
-      - REDIS_HOST=redis
     env_file:
       - stack.env
     depends_on:
