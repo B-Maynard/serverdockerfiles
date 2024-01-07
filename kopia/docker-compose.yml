@@ -18,10 +18,16 @@ services:
             - --server-password=${SERVER_PASSWORD}
         volumes:
             # Mount local folders needed by kopia (edit these to whatever you want)
+            # LOCAL
+            - /home/bailey:/serverHomeDir
+            - /home/bailey/Backup/Kopia:/externalBackupFolder
+            # REMOTE
+            - /home/bailey/Docker/NextCloud/data/data:/nextcloudData
+            # General
             - /home/bailey/Docker/KopiaRemote/app/config:/app/config
             - /home/bailey/Docker/KopiaRemote/app/cache:/app/cache
             - /home/bailey/Docker/KopiaRemote/app/logs:/app/logs
             # Mount repository location
             - /home/bailey/Docker/KopiaRemote/repository:/repository
             # Mount path for browsing mounted snaphots
-            - /home/bailey/Docker/KopiaTemp:/tmp:shared
+            - /home/bailey/Docker/KopiaRemote/KopiaTemp:/tmp:shared
