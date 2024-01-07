@@ -20,6 +20,8 @@ services:
     volumes:
       - /home/bailey/Docker/NextCloud/nextcloud/:/nextcloud
       - /home/bailey/Docker/NextCloud/data/:/var/www/html
+    ports:
+      - 8080:80
     env_file:
       - ../stack.env
     depends_on:
