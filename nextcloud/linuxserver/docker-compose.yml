@@ -12,5 +12,5 @@ services:
       - /home/bailey/Docker/Nextcloud/config:/config
       - /home/bailey/Docker/Nextcloud/data:/data
     ports:
-      - 443:443
+      - 1443:443
     restart: unless-stopped
