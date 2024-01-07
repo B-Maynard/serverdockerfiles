@@ -77,3 +77,19 @@ services:
     restart: unless-stopped
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=1
+
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /home/bailey/Docker/Plex/config:/config
+      - /home/bailey/Server/TV:/tv
+      - /home/bailey/Server/Movies:/movies
+    ports:
+      - "32400:32400"
+    restart: unless-stopped
