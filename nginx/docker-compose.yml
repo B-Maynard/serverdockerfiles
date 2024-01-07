@@ -8,5 +8,5 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - /home/bailey/Dcoker/Nginx/data:/data
-      - /home/bailey/Dcoker/Nginx/letsencrypt:/etc/letsencrypt
+      - /home/bailey/Docker/Nginx/data:/data
+      - /home/bailey/Docker/Nginx/letsencrypt:/etc/letsencrypt
