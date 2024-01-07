@@ -1,6 +1,19 @@
 ---
 version: "2.1"
 services:
+  db:
+    image: mariadb:10.5.13
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    env_file:
+      - ../stack.env
+
+  redis:
+    image: redis:alpine
+    restart: always
+
   nextcloud:
     image: lscr.io/linuxserver/nextcloud:latest
     container_name: nextcloud
@@ -14,3 +27,20 @@ services:
     ports:
       - 1443:443
     restart: unless-stopped
+
+  cron:
+    image: nextcloud:apache
+    restart: always
+    volumes:
+      - /home/bailey/Docker/NextCloud/data/:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db:
+  nextcloud:
+  certs:
+  vhost.d:
+  html:
