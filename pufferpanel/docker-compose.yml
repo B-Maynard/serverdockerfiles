@@ -1,0 +1,12 @@
+version: "2.1"
+services:
+  pufferpanel:
+    image: pufferpanel/pufferpanel:latest
+    container_name: pufferpanel
+    volumes:
+      - /home/bailey/Docker/PufferPanel/config:/etc/pufferpanel
+      - /home/bailey/Docker/PufferPanel/var/lib/pufferpanel:/var/lib/pufferpanel
+    ports:
+      - "8081:8080"
+      - "5657:5657"
+    restart: unless-stopped
