@@ -31,6 +31,8 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+    depends_on:
+      - db
 
   cron:
     image: nextcloud:apache
