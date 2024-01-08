@@ -16,6 +16,10 @@ services:
             - --address=0.0.0.0:51516
             - --server-username=${SERVER_USERNAME}
             - --server-password=${SERVER_PASSWORD}
+        environment:
+            USER: ${USER}
+            KOPIA_PASSWORD: ${KOPIA_PASSWORD}
+            KOPIA_PERSIST_CREDENTIALS_ON_CONNECT: true
         volumes:
             # Mount local folders needed by kopia (edit these to whatever you want)
             # LOCAL
