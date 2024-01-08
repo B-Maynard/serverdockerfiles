@@ -32,7 +32,7 @@ services:
     image: nextcloud:apache
     restart: always
     volumes:
-      - /home/bailey/Docker/NextCloud/data/:/var/www/html
+      - /home/bailey/Docker/Nextcloud/data/:/var/www/html
     entrypoint: /cron.sh
     depends_on:
       - db
