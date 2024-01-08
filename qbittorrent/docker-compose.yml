@@ -16,7 +16,7 @@ services:
       - LAN_NETWORK=192.168.50.0/24
       - NAME_SERVERS=8.8.8.8,8.8.4.4
     ports:
-      - 8080:8080
+      - 8081:8080
       - 8999:8999
       - 8999:8999/udp
     volumes:
